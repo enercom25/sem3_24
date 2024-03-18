@@ -1,0 +1,20 @@
+StockTick={symbol='GE', price=20.5}
+
+t=t.plus(5 seconds)
+
+StockTick={symbol='YHOO', price=65}
+
+t=t.plus(5 seconds)
+
+StockTick={symbol='google', price=33.5}
+
+t=t.plus(5 seconds)
+
+StockTick={symbol='apple', price=175}
+
+
+========================================================
+
+create schema StockTick(symbol string, price double);
+
+select price from StockTick where price > 40;
