@@ -1,0 +1,49 @@
+//https://fusionauth.io/dev-tools/date-time
+%esperscenario
+//What would be the scores of User1, User2 and User3? ["User1=-1,User2=105,User3=5"]
+TriviaQuestion={questionId="Q1", question="Who was the director of the CIA from 1976-81?", questionTime=1709715600000,answer="2"}
+PlayerAnswer={playerId="User1", questionId="Q1", answer="1", clientAnswerTime=1709715601320}
+PlayerAnswer={playerId="User2", questionId="Q1", answer="2", clientAnswerTime=1709715601180}
+PlayerAnswer={playerId="User3", questionId="Q1", answer="2", clientAnswerTime=1709715602100}
+UpdateScore={questionId="Q1"}
+
+
+//What would be the scores of User1, User2 and User3? ["User1=104,User2=106,User3=4"]
+%esperscenario
+TriviaQuestion={questionId="Q2", question="In which mountains are Camp David?", questionTime=1709715630000,answer="1"}
+PlayerAnswer={playerId="User1", questionId="Q2", answer="1", clientAnswerTime=1709715631120}
+PlayerFARequest={playerId="User2", questionId="Q2"}
+PlayerAnswer={playerId="User2", questionId="Q2", answer="1", clientAnswerTime=1709715632150}
+PlayerAnswer={playerId="User3", questionId="Q2", answer="3", clientAnswerTime=1709715633000}
+UpdateScore={questionId="Q2"}
+
+
+//What would be the scores of User1, User2 and User3? ["User1=109,User2=211,User3=3"]
+%esperscenario
+TriviaQuestion={questionId="Q3", question="Which song say, The words of the president are written on the subway walls?", questionTime=1709715660000,answer="4"}
+PlayerAnswer={playerId="User1", questionId="Q3", answer="1", clientAnswerTime=1709715662000}
+PlayerAnnulment={playerId="User1", questionId="Q3",annulTime=1709715665000}
+PlayerAnswer={playerId="User1", questionId="Q3", answer="4", clientAnswerTime=1709715730000}
+PlayerAnswer={playerId="User2", questionId="Q3", answer="4", clientAnswerTime=1709715670100}
+PlayerAnswer={playerId="User3", questionId="Q3", answer="3", clientAnswerTime=1709715710000}
+UpdateScore={questionId="Q3"}
+
+//What would be the scores of User1, User2 and User3? ["User1=214,User2=210,User3=-48"]
+%esperscenario
+TriviaQuestion={questionId="Q4", question="Who sang the title song for the Bond film A View To A Kill?", questionTime=1709715690000,answer="2"}
+PlayerAnswer={playerId="User1", questionId="Q4", answer="2", clientAnswerTime=1709715692000}
+PlayerAnswer={playerId="User2", questionId="Q4", answer="2", clientAnswerTime=1709715705000}
+PlayerAnnulment={playerId="User2", questionId="Q4",annulTime=1709715722000}
+PlayerAnswer={playerId="User2", questionId="Q4", answer="2", clientAnswerTime=1709715724100}
+PlayerAnswer={playerId="User3", questionId="Q4", answer="1", clientAnswerTime=1709715695100}
+UpdateScore={questionId="Q4"}
+
+
+ChangeRule={ruleId="1", points=200}
+
+//What would be the scores of User1, User2 and User3? [User1=219,User2=215,User3=157}
+TriviaQuestion={questionId="Q5", question="In which country did General Jaruzelski impose marital law in 1981?", questionTime=1709715720000,answer="3"}
+PlayerAnswer={playerId="User1", questionId="Q5", answer="3", clientAnswerTime=1709715730000}
+PlayerAnswer={playerId="User2", questionId="Q5", answer="3", clientAnswerTime=1709715735000}
+PlayerAnswer={playerId="User3", questionId="Q5", answer="3", clientAnswerTime=1709715722000}
+UpdateScore={questionId="Q5"}
