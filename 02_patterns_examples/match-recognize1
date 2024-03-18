@@ -1,0 +1,21 @@
+create schema AlertNamedWindow(origin string, alarmNumber double, priority string);
+
+
+
+select * from AlertNamedWindow
+  match_recognize (
+    partition by origin
+    measures a1.origin as origin, a1.alarmNumber as alarmNumber1, a2.alarmNumber as alarmNumber2
+    pattern (a1 a2)
+    define
+      a1 as a1.priority = 'high',
+      a2 as a2.priority = 'medium'
+)
+
+======================
+
+t=t.plus(45 seconds)
+AlertNamedWindow={origin='S1', alarmNumber=1, priority='high'}
+AlertNamedWindow={origin='S2', alarmNumber=2, priority='high'}
+AlertNamedWindow={origin='S2', alarmNumber=3, priority='medium'}
+AlertNamedWindow={origin='S1', alarmNumber=4, priority='high'}
