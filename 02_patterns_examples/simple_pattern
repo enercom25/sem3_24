@@ -1,0 +1,34 @@
+StockTick={symbol='GE', price=20.5}
+
+t=t.plus(5 seconds)
+
+StockTick={symbol='YHOO', price=65}
+
+t=t.plus(5 seconds)
+
+StockTick={symbol='google', price=33.5}
+
+t=t.plus(5 seconds)
+
+StockTick={symbol='apple', price=175}
+
+t=t.plus(5 seconds)
+
+Trade={tradeNbr=1}
+Trade={tradeNbr=6}
+Trade={tradeNbr=7}
+Trade={tradeNbr=8}
+
+
+===============================================
+
+
+
+
+create schema StockTick(symbol string, price double);
+create schema Trade(tradeNbr int);
+
+
+select * from pattern [every tick=StockTick ->  trade=Trade]
+
+// every tick followed by a trade
