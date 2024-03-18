@@ -1,0 +1,15 @@
+create schema StockTick(symbol string, price double);
+create schema ServiceOrder(custId string, name string, price double);
+create schema ProductOrder(custId string, name string, price double);
+
+select a.custId, sum(a.price + b.price) from pattern [every a=ServiceOrder -> b=ProductOrder(custId=a.custId) where timer:within(1 min)]#time(2 hour) where a.name in ('Repair', b.name) group by a.custId having sum(a.price + b.price)>100
+
+
+============================
+t=t.plus(45 seconds)
+ServiceOrder={custId='ID1', name='Repair', price=142}
+ProductOrder={custId='ID1', name='Repair', price=2}
+
+t=t.plus(60 seconds)
+ServiceOrder={custId='ID1', name='Repair', price=171}
+ProductOrder={custId='ID1', name='Repair', price=22}
