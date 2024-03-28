@@ -1,0 +1,14 @@
+create schema Withdrawal(amount double);
+==============================================
+Withdrawal={amount=500}
+
+t=t.plus(5 seconds)
+
+Withdrawal={amount=100}
+
+t=t.plus(5 seconds)
+
+Withdrawal={amount=200}
+
+t=t.plus(5 seconds)
+Withdrawal={amount=50}
